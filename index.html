@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>wavesurfer.js | Media Element Example</title>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebApplication" class="container pt-5 bg-light">
+    <h1>Speech-to-Text Demo</h1>
+        <!-- Initialize a div for WaveSurfer -->
+        <div id="demo">
+            <div id="waveform"></div>
+        </div>
+        <!-- Text box -->
+        <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
+            <span id="final" class="text-dark"></span>
+            <span id="interim" class="text-secondary"></span>
+          </div>
+        <!-- Add a file input where the user should drag the file to load into WaveForm -->
+        <br>
+        <div>
+        <input type="file" id="fileinput" />
+        </div>
+        <br>
+        <div class="controls">
+            <div class="row">
+                <div class="col-sm-7">
+                    <button class="btn btn-success" data-action="play">
+                        <i class="glyphicon glyphicon-play"></i>
+                        Play /
+                        <i class="glyphicon glyphicon-pause"></i>
+                        Pause
+                    </button>
+                    <button class="btn btn-success" id="start">Start Recording</button>
+                    <button class="btn btn-danger" id="stop" data-action="stop">Stop</button>
+                </div>
+            </div>
+        </div>
+        <p id="status" class="lead mt-3 text-dark" style="display: none">Listenting ...</p>
+        <p id="confidence_score" class="lead mt-3 text-dark" style="display: none">Confidence Score: </p>
+        </body>
+        <script src="audio.js"></script>
+        <script src="./speechRecognition.js"></script>
+        </html>
